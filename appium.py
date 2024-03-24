@@ -1,6 +1,4 @@
 from appium import webdriver
-
-# Deseables para pruebas más robustas
 from appium.webdriver.common.appiumby import AppiumBy
 from appium.webdriver.common.touch_action import TouchAction
 from appium.webdriver.common.multi_action import MultiAction
@@ -18,9 +16,11 @@ driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_caps)
 # Localizar elementos
 boton_login = driver.find_element(AppiumBy.ID, "com.example.app:id/login_button")
 campo_usuario = driver.find_element(AppiumBy.ID, "com.example.app:id/username_field")
+campo_contrasena = driver.find_element(AppiumBy.ID, "com.example.app:id/password_field")
 
 # Interactuar con la app
 campo_usuario.send_keys("usuario")
+campo_contrasena.send_keys("contrasena")
 boton_login.click()
 
 # Acciones más complejas
